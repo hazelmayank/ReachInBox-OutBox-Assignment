@@ -1,0 +1,4 @@
+email
+bulk-one@example.com
+bulk-two@example.com
+bulk-three@example.com

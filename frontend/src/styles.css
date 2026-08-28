@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #1d1f1e; }
+  body { margin: 0; min-width: 320px; min-height: 100vh; background: #f5f7f6; }
+  button, input, textarea, select { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  th { @apply px-5 py-3 font-semibold; }
+  td { @apply px-5 py-4; }
+}
+
+@layer components {
+  .nav-item { @apply flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-slate-500 transition hover:bg-slate-100 hover:text-ink; }
+  .nav-item span { @apply flex-1; }
+  .nav-item b { @apply text-xs font-medium text-slate-400; }
+  .nav-active { @apply bg-mint-100 text-ink; }
+  .nav-active b { @apply text-mint-600; }
+  .mobile-nav { @apply flex flex-col items-center gap-1 px-4 py-1 text-[10px] font-medium text-slate-500; }
+  .mobile-nav svg { @apply h-4 w-4; }
+  .segment { @apply rounded-md px-4 py-2 text-xs font-medium text-slate-500; }
+  .segment-active { @apply bg-white text-ink shadow-sm; }
+  .status { @apply inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold; }
+  .status-scheduled { @apply bg-amber-50 text-amber-700; }
+  .status-processing { @apply bg-blue-50 text-blue-700; }
+  .status-sent { @apply bg-emerald-50 text-emerald-700; }
+  .status-failed { @apply bg-red-50 text-red-700; }
+  .form-row { @apply flex flex-col gap-2 sm:flex-row sm:items-center; }
+  .form-row > label { @apply w-20 shrink-0 text-xs font-medium text-slate-500; }
+  .form-control { @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-mint-500 focus:ring-2 focus:ring-mint-100; }
+  .recipient-chip { @apply inline-flex items-center gap-1 rounded-full border border-mint-500 bg-mint-50 px-2.5 py-1 text-xs text-mint-600; }
+  .recipient-chip button { @apply rounded-full p-0.5 hover:bg-mint-100; }
+  .field-label { @apply block space-y-2 text-xs font-medium text-slate-500; }
+}
+
+@media (max-width: 767px) {
+  body { padding-bottom: 72px; }
+  th, td { @apply px-3; }
+}
